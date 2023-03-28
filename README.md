@@ -60,4 +60,6 @@ ORDER BY
 ### 谋IP请求最多的接口
 ~~~
 SELECT method,url,count(*) AS 总次数 FROM request WHERE remote_addr = "219.128.21.94" GROUP BY method,path ORDER BY 总次数 DESC;
+
+SELECT MIN(time_local),MAX(time_local),method,path,count(*) AS 总次数,AVG(upstream_response_time) AS 后端处理平均时间,MAX(upstream_response_time) FROM request WHERE remote_addr = "8.134.90.185" GROUP BY method,path ORDER BY 总次数 DESC;
 ~~~
