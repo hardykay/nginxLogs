@@ -76,8 +76,8 @@ func GetInfo(s string) (data RequestInfo, err error) {
 	data.Url = matchArr[6]
 	url := strings.Split(data.Url, "?")
 	// 处理路由中的数字
-	re := regexp.MustCompile("\\d+")
-	data.Path = re.ReplaceAllString(url[0], ":id")
+	re := regexp.MustCompile("/\\d+")
+	data.Path = re.ReplaceAllString(url[0], "/:id")
 	if len(url) >= 2 {
 		data.Param = url[1]
 	}
