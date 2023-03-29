@@ -5,7 +5,6 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
-	"sync"
 	"time"
 )
 
@@ -101,8 +100,6 @@ func GetInfo(s string) (data RequestInfo, err error) {
 	data.HttpXForwardedFor = matchArr[12]
 	return
 }
-
-var lock sync.Mutex
 
 func HandelData(ch chan string, dbData chan RequestInfo) {
 	for v := range ch {
