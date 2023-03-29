@@ -23,9 +23,10 @@ var conf = ConfStruct{
 	Port:     3306,
 	Dbname:   "test",
 	Params:   "charset=utf8mb4&collation=utf8mb4_unicode_ci&parseTime=true&loc=Local",
-	//StartTime: "2023-02-27 11:45:57",
-	//EndTime:   "2023-04-27 11:45:57",
-	Reset: true,
+	Reset:    true,
+
+	StartTime: "2023-03-29 10:22:00",
+	EndTime:   "2023-03-29 11:39:00",
 }
 
 func init() {
